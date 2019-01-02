@@ -3,12 +3,6 @@ var router = express.Router();
 const db = require('../module/db');
 const wrapper = require('../module/asyncWrapper');
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
-
-
 router.get('/:id', wrapper.asyncWrapper( async function(req, res) {
   const id = req.params.id;
   console.log(id);
